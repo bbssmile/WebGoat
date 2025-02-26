@@ -11,7 +11,6 @@ RUN \
 
 USER webgoat
 
-COPY --chown=webgoat /var/lib/jenkins/workspace/webgoat/webgoat-*.jar /home/webgoat/webgoat.jar
 
 EXPOSE 8080
 EXPOSE 9090
