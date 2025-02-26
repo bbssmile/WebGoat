@@ -6,6 +6,11 @@ pipeline {
         git branch: 'main', url: 'https://github.com/bbssmile/WebGoat.git'
       }
     }
+    stage('Build JAR') {
+        steps {
+        sh 'mvn clean package -DskipTests'
+        }
+    }
     stage('build') {
       steps {
         withDockerRegistry(credentialsId: 'docker-hub', url: 'https://index.docker.io/v1/') {
